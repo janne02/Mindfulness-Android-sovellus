@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">projekti</string>
+    <string-array name="dropdown">
+        <item></item>
+        <item>Vaihda käyttäjää</item>
+        <item>Asetukset</item>
+        <item>Sulje sovellus</item>
+    </string-array>
+</resources>
