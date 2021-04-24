@@ -48,7 +48,7 @@ public class NeljasAktiviteetti extends AppCompatActivity implements AdapterView
             Intent paavalikko = new Intent(NeljasAktiviteetti.this, MainActivity.class);
             startActivity(paavalikko);
         } else if(text.equals("Sulje sovellus")) {
-
+            this.finishAffinity();
         }
     }
     @Override

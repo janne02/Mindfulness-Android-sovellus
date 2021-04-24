@@ -50,7 +50,7 @@ public class KolmasAktiviteetti extends AppCompatActivity implements AdapterView
             Intent paavalikko = new Intent(KolmasAktiviteetti.this, MainActivity.class);
             startActivity(paavalikko);
         } else if(text.equals("Sulje sovellus")) {
-
+            this.finishAffinity();
         }
     }
     @Override

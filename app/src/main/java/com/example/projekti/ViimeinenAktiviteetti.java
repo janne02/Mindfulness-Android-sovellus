@@ -48,7 +48,7 @@ public class ViimeinenAktiviteetti extends AppCompatActivity implements AdapterV
             Intent paavalikko = new Intent(ViimeinenAktiviteetti.this, MainActivity.class);
             startActivity(paavalikko);
         } else if(text.equals("Sulje sovellus")) {
-
+            this.finishAffinity();
         }
     }
     @Override

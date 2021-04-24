@@ -9,7 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Projekti">
-        <activity android:name=".ViimeinenAktiviteetti"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".MoodNegative" />
+        <activity android:name=".MoodNeutral" />
+        <activity android:name=".MoodPositive" />
+        <activity android:name=".MeterActivity" />
+        <activity android:name=".OmatTiedot" />
+        <activity android:name=".ViimeinenAktiviteetti" />
         <activity android:name=".NeljasAktiviteetti" />
         <activity android:name=".KolmasAktiviteetti" />
         <activity android:name=".TokaAktiviteetti" />

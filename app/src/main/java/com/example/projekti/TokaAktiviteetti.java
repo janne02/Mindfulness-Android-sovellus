@@ -16,17 +16,19 @@ public class TokaAktiviteetti extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_toka_aktiviteetti);
     }
+
     // siirtyy seuraavaan aktiviteettiin
     public void seuraavaButton(View view) {
-        Intent goBack =new
-                Intent(TokaAktiviteetti.this,KolmasAktiviteetti.class);
+        Intent goBack = new
+                Intent(TokaAktiviteetti.this, KolmasAktiviteetti.class);
         startActivity(goBack);
     }
 
     // palaa takaisin aikasempaan aktiviteettiin
-        public void returnButton(View view) {
-            Intent goBack =new
-                    Intent(TokaAktiviteetti.this,MainActivity.class);
-            startActivity(goBack);
-        }
+    public void returnButton(View view) {
+        Intent goBack = new
+                Intent(TokaAktiviteetti.this, MainActivity.class);
+        startActivity(goBack);
+    }
+    //valitsit hyvän fiiliksen joten laitamme sinut tekemään hyvä fiiliksisen tehtäviä
 }
