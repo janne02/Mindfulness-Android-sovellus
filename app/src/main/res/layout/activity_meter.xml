@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MeterActivity">
+
+
+    <Button
+        android:id="@+id/buttonyes2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="MoodPositive"
+        android:text="Positiivinen fiilis"
+        app:backgroundTint="#8BC34A"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.39" />
+
+
+    <Button
+        android:id="@+id/takas2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="MoodNegative"
+        android:text="Negatiivinen fiilis"
+        app:backgroundTint="#FF5722"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.57"
+        app:rippleColor="#838383" />
+
+    <Button
+        android:id="@+id/buttoDAn2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="MoodNeutral"
+        android:text="Neutraali fiilis"
+        app:backgroundTint="#FF9800"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48000002"
+        app:rippleColor="#838383" />
+
+    <Button
+        android:id="@+id/omiatietoja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OmatTiedot"
+        android:text="omat tiedot"
+        app:backgroundTint="#7C7C7C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94"
+        app:rippleColor="#838383" />
+</androidx.constraintlayout.widget.ConstraintLayout>
