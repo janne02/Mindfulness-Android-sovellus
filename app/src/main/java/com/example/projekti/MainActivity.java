@@ -20,12 +20,14 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class MainActivity extends AppCompatActivity {
+    DatabaseHelper myDB;
     EditText editTextUsername;
     EditText editTextAge;
     private Button buttonConfirm;
@@ -41,27 +43,16 @@ public class MainActivity extends AppCompatActivity {
         editTextAge = findViewById(R.id.age);
         //final EditText editTextAge = findViewById(R.id.age);
 
+        myDB = new DatabaseHelper(this);
+
         editTextUsername.addTextChangedListener(loginTextWatcher);
         editTextAge.addTextChangedListener(loginTextWatcher);
         //final EditText editTextUsername = findViewById(R.id.name);
         buttonConfirm = findViewById(R.id.button);
-        SharedPreferences sharedpreferences = getSharedPreferences(getString(R.string.app_name),
-                Context.MODE_PRIVATE);
-        if (!sharedpreferences.getBoolean(prevStarted, false)) {
-            SharedPreferences.Editor editor = sharedpreferences.edit();
-            editor.putString("Key", "Value");
-            editor.putBoolean(prevStarted, Boolean.TRUE);
-            editor.apply();
-        } else {
-            moveToMeterActivity();
-        }
+
     }
 
-    private void moveToMeterActivity() {
-        Intent intent = new Intent(this, MeterActivity.class);
-        //startActivity(intent);
-    }
-
+    //Disables Confirm button until both fields are filled with something atleast
     private TextWatcher loginTextWatcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -80,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         public void afterTextChanged(Editable s) {
 
 
-            //
+            //Saving userinput to SQLite
 
             buttonConfirm.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -92,25 +83,32 @@ public class MainActivity extends AppCompatActivity {
                     editor.putString("value", value);
                     editor.putString("value1", value1);
                     editor.apply();
-                    Intent intent = new Intent(MainActivity.this, MeterActivity.class);
-                    startActivity(intent);
+                    if (editTextUsername.length() != 0 && editTextAge.length() != 0) {
+                        AddData("nimi: " + value, "    " + " ikä: " + value1);
+                        editTextUsername.setText("");
+                        editTextAge.setText("");
+                        //Opens MeterActivity when Confirm button is pressed
+                        Intent intent = new Intent(MainActivity.this, MeterActivity.class);
+                        startActivity(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "You must put something in the text field!", Toast.LENGTH_LONG).show();
+                    }
                 }
             });
         }
 
-
-        // Tässä siirrymme seuraavaan aktiviteettiin
-        public void seuraavaButton(View view) {
-
-
-            Intent goNext = new
-
-                    Intent(MainActivity.this, MeterActivity.class);
-
-            startActivity(goNext);
+        //here we add it to sqlite database
+        public void AddData(String value, String value1) {
+            boolean insertData = myDB.addData(value + value1);
+            if (insertData == true) {
+                Toast.makeText(MainActivity.this, "Tallennettu jeejee", Toast.LENGTH_LONG).show();
+            } else {
+                Toast.makeText(MainActivity.this, "nyt meni jotai pahast pielee", Toast.LENGTH_LONG).show();
 
 
+            }
         }
     };
+
 }
 

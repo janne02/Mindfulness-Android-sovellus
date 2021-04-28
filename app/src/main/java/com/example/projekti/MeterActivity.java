@@ -23,30 +23,30 @@ public class MeterActivity extends AppCompatActivity {
     // siirtyy seuraavaan aktiviteettiin
 
 
-    //valitsit hyvän fiiliksen joten laitamme sinut tekemään hyvä fiiliksisen tehtäviä
+    //you chose positive feeling so we open negative activity
     public void MoodPositive(View view) {
         Intent goodMood = new Intent(MeterActivity.this, MoodPositive.class);
         startActivity(goodMood);
     }
 
-    // palaa takaisin aikasempaan aktiviteettiin
-
-
+    //you chose negative feeling so we open negative activity
     public void MoodNegative(View view) {
         Intent badMood = new
                 Intent(MeterActivity.this, MoodNegative.class);
         startActivity(badMood);
     }
 
+    //you chose neutral feeling so we open Neutral activity
     public void MoodNeutral(View view) {
         Intent goBack = new
                 Intent(MeterActivity.this, MoodNeutral.class);
         startActivity(goBack);
     }
 
-    public void OmatTiedot(View view) {
+    // Opens ViewList activity which has all the users from the SQLLITE database as a listview
+    public void ViewListContents(View view) {
         Intent tiedot = new
-                Intent(MeterActivity.this, OmatTiedot.class);
+                Intent(MeterActivity.this, ViewListContents.class);
         startActivity(tiedot);
     }
 }

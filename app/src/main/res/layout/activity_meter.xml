@@ -56,7 +56,7 @@
         android:id="@+id/omiatietoja"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="OmatTiedot"
+        android:onClick="ViewListContents"
         android:text="omat tiedot"
         app:backgroundTint="#7C7C7C"
         app:layout_constraintBottom_toBottomOf="parent"
